@@ -1,0 +1,34 @@
+# Experiment configuration — mirrors paper §3–5.
+data_path: data/raw/Telco-Customer-Churn.csv
+output_dir: results
+
+cv:
+  n_splits: 5              # stratified 5-fold, 3 train / 1 val / 1 test per iteration
+  seeds: [0, 1, 2]         # repeat the whole protocol with different fold splits
+
+encoders: [onehot, target]
+models: [logreg, gbt]
+
+target_encoder:
+  smooth: auto             # empirical-Bayes shrinkage toward global churn rate
+  inner_cv: 5              # cross-fitting inside the training portion
+
+search_space:
+  logreg:                  # L2-regularised logistic regression
+    C: [0.01, 0.1, 1.0, 10.0]
+  gbt:                     # gradient-boosted trees, early-stopped on val log-loss
+    max_depth: [2, 3, 4]
+    learning_rate: [0.05, 0.1]
+    subsample: [0.8]
+    n_estimators: [500]    # upper bound; truncated by early stopping
+
+stability:
+  top_q: 0.10              # top-decile targeting list
+
+abtest:
+  alpha: 0.05
+  power: 0.80
+  eligible_top_q: 0.10     # experiment population = top 10% risk
+  # relative churn reductions the offer might achieve (minimum detectable effects)
+  relative_mde: [0.05, 0.10, 0.15, 0.20, 0.25, 0.30]
+  monthly_eligible_customers: 700   # assumed inflow into the eligibility pool per month

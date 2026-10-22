@@ -1,0 +1,7 @@
+a,b,spearman,jaccard_top,overlap_share,n_only_first,n_only_second
+GBT+One-hot,GBT+Target,0.9743,0.7139,0.8326,118.0,118.0
+LogReg+One-hot,GBT+One-hot,0.9406,0.5583,0.7163,200.0,200.0
+LogReg+One-hot,GBT+Target,0.9503,0.582,0.7357,186.3333,186.3333
+LogReg+One-hot,LogReg+Target,0.9939,0.8668,0.9286,50.3333,50.3333
+LogReg+Target,GBT+One-hot,0.9373,0.5452,0.7054,207.6667,207.6667
+LogReg+Target,GBT+Target,0.9499,0.5697,0.7258,193.3333,193.3333
