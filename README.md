@@ -1,6 +1,6 @@
 # Categorical Encoding Choices and Their Impact on Churn Targeting
 
-[![CI](https://github.com/<your-username>/churn-encoding-study/actions/workflows/ci.yml/badge.svg)](https://github.com/<your-username>/churn-encoding-study/actions)
+[![CI](https://github.com/jingyi21-77/churn-encoding-study/actions/workflows/ci.yml/badge.svg)](https://github.com/jingyi21-77/churn-encoding-study/actions)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
@@ -29,7 +29,7 @@ Targeting: Evidence on Telco Data with an A/B Test Design Plan"** (Jingyi Yang).
 ## Quick start
 
 ```bash
-git clone https://github.com/<your-username>/churn-encoding-study.git
+git clone https://github.com/jingyi21-77/churn-encoding-study.git
 cd churn-encoding-study
 pip install -r requirements.txt pytest
 
